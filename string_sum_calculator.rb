@@ -18,6 +18,7 @@ end
 class StringCalculator
   def self.add(input)
     return 0 if input.empty?
-    input.to_i
+    numbers = input.split(',')
+    numbers.map(&:to_i).sum
   end
 end
