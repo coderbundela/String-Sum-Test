@@ -25,6 +25,10 @@ class StringCalculatorTest < Minitest::Test
   def test_add_with_different_delimiters
     assert_equal 3, StringCalculator.add("//;\n1;2")
   end
+
+  def test_add_negative_numbers
+    assert_raises(ArgumentError) { StringCalculator.add("-1,2") }
+  end
 end
 
 class StringCalculator
