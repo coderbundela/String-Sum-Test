@@ -13,6 +13,10 @@ class StringCalculatorTest < Minitest::Test
   def test_add_two_numbers
     assert_equal 3, StringCalculator.add("1,2")
   end
+
+  def test_add_multiple_numbers
+    assert_equal 6, StringCalculator.add("1,2,3")
+  end
 end
 
 class StringCalculator
