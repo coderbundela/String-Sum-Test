@@ -30,7 +30,13 @@ end
 class StringCalculator
   def self.add(input)
     return 0 if input.empty?
-    numbers = input.split(',')
+    if input.start_with?("//")
+      delimiter = input[2]
+      input = input.split("\n", 2).last
+    else
+      delimiter = /,|\n/
+    end
+    numbers = input.split(delimiter)
     numbers.map(&:to_i).sum
   end
 end
